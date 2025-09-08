@@ -1,8 +1,6 @@
 package models;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 
 import java.util.Map;
 import java.util.HashMap;
@@ -11,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,7 +18,6 @@ import java.net.URISyntaxException;
 
 
 import cafeteria.App;
-import models.Category;
 
 
 public class Cafeteria {

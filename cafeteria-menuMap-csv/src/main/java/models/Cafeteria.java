@@ -9,11 +9,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
+import java.util.stream.Stream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.net.URISyntaxException;
 
 
@@ -156,7 +159,74 @@ public class Cafeteria {
             .forEach(System.out::println);                // es igual a sale -> sale.getCode();
     }
 
+    public void importarDesdeCSV() {
+        String folderPath = "/data";   // carpeta dentro de resources
+        // int totalLineas = 0;
 
+        try {
+            // 1. obtener carpeta "data" desde resources
+            URL folderURL = App.class.getResource(folderPath);
+            Path dataFolder = Paths.get(folderURL.toURI());
+
+            // 2. listar archivos .csv dentro de la carpeta
+            try (Stream<Path> files = Files.list(dataFolder)) {
+                files.filter(path -> path.toString().endsWith(".csv"))
+                    .forEach(path -> {
+                        // para cada CSV encontrado, lo procesamos
+                        procesarCSV(path.toFile());
+                    });
+            }
+
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // método auxiliar que procesa UN archivo CSV
+    private void procesarCSV(File csv) {
+        try (Scanner scanner = new Scanner(csv)) {
+            int lineNumber = 0;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                lineNumber++;
+                if (lineNumber == 1) continue; // omitir encabezado
+
+                // Codigo,NombreProducto,TipoProducto,CantidadVendida,PrecioVenta,Descuento
+                String[] items = line.split(",");
+
+                // stupid check
+                if (items.length < 6) {
+                    System.err.println("Línea inválida (" + lineNumber + "): " + line);
+                    continue;
+                }
+
+                String code = items[0];
+                String name = items[1];
+                String categoryName = items[2];
+
+                // Si no lo contiene agrega al hashmap
+                Category category;
+                if (!this.categories.containsKey(categoryName)) {
+                    category = new Category(categoryName);
+                    this.categories.put(categoryName, category);
+                } else {
+                    category = this.categories.get(categoryName);
+                }
+
+                int quantitySold = Integer.parseInt(items[3]);
+                double price = Double.parseDouble(items[4]);
+                double discount = Double.parseDouble(items[5]);
+
+                Sale sale = new Sale(code, name, category, quantitySold, price, discount);
+                this.sales.add(sale);
+            }
+            System.out.printf("Archivo %s procesado.%n", csv.getName());
+        } catch (FileNotFoundException e) {
+            System.err.println("Archivo no encontrado: " + e.getMessage());
+        }
+    }
+
+    /* ESTE era mi metodo comun con un solo archivo.csv
     public void importarDesdeCSV() {
         String pathFile = "/data/cafelahumedad.csv";  // con "/" para buscar en resources
         Scanner scanner = null;
@@ -221,22 +291,7 @@ public class Cafeteria {
         if (lineNumber > 1){
             System.out.printf("Se cargaron %d ventas.%n", lineNumber - 1);
         }
-
-        /*
-        URL folderPath = App.class.getResource("/data");
-
-        Path dataFolder = Paths.get(folderPath.toURI());
-
-        
-        try (Stream<Path> files = Files.list(dataFolder)) {
-            files.filter(path -> path.toString().endsWith(".csv"))
-                .forEach(path -> {
-                    // Leer archivo CSV
-                });
-
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        } */
     }
+    */
 
 }

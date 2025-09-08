@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*; // Importa métodos de aserci�
 /* Solo se ejecutarán los métodos @Test que estén en AlquilerTest.java.
 No se ejecutan las demás clases de test. */
 
-
 /*
  * mvn -Dtest=AlquilerTest#testCalcularAlquiler test
 Solo se ejecuta el método testCalcularAlquiler() dentro de AlquilerTest.

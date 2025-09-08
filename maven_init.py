@@ -4,8 +4,8 @@
 # NOTE Sirve para iniciar un nuevo proyecto al crear una nueva carpeta y movernos a la misma
 
 mvn archetype:generate `
-  "-DgroupId=com.ejemplo.alquileres" `
-  "-DartifactId=alquiler-csv" `
+  "-DgroupId=listas.menu" `
+  "-DartifactId=listas-menu" `
   "-DarchetypeGroupId=org.apache.maven.archetypes" `
   "-DarchetypeArtifactId=maven-archetype-quickstart" `
   "-DinteractiveMode=false"
@@ -26,7 +26,7 @@ mvn archetype:generate `
 
 
 
-# NOTE LOMBOK DEPENDENCY
+# NOTE LOMBOK DEPENDENCY   - o version 1.18.30
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
@@ -40,11 +40,19 @@ mvn archetype:generate `
 CREAR UN NUEVO PROYECTO
 
 mvn archetype:generate `
-  "-DgroupId=com.ejemplo" `
-  "-DartifactId=lista-propia" `
+  "-DgroupId=cafeteria" `
+  "-DartifactId=cafeteria-menuMap-csv" `
   "-DarchetypeGroupId=org.apache.maven.archetypes" `
   "-DarchetypeArtifactId=maven-archetype-quickstart" `
   "-DinteractiveMode=false"
+
+
+
+# NOTE para hacer push a git
+
+git add .
+git commit -m "Agregado Menu de opciones generico."
+git push origin main
 
 """ 
 

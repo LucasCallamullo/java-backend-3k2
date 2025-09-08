@@ -9,6 +9,11 @@ proofs/
 sintaxis-basic/
 sintaxis-objetos/
 
+# mvn stuff
+.mvn/
+mvn/
+jvm.config
+maven.config
 
 # Compiled class files
 *.class

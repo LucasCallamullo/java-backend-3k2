@@ -114,8 +114,8 @@ public class Cafeteria {
     public void showOneCategoryNSales(String categoryName) {
         List<Sale> filtered = this.sales.stream()
             .filter(sale -> sale.getCategory().getName().equals(categoryName))
-            .toList();
-        
+            .toList(); // convierte el stream a una lista y retorna
+
         // realmente se podría simplificar en el primer stream con listas
         // ver ejemplo en showSalesSortedByName()
 
@@ -125,6 +125,7 @@ public class Cafeteria {
             .peek(sale -> System.out.println(sale))
             .mapToInt(sale -> sale.getQuantitySold())
             .sum();
+
             // .sorted(Comparator.comparing(sale -> sale.getName())) 
             // .sorted(Comparator.comparing((Sale sale) -> sale.calcularPrecioVenta()).reversed())   // reversed es de mayor a menor
 
@@ -295,3 +296,4 @@ public class Cafeteria {
     */
 
 }
+

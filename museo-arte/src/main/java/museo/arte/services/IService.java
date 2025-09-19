@@ -23,4 +23,6 @@ public interface IService<T, K> {
      * Listar todos los objetos de esta entidad.
      */
     List<T> getAll();
+
+    boolean existsByName(String nombre);
 }

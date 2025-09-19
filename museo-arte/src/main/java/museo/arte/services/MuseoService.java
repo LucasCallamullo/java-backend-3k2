@@ -53,6 +53,14 @@ public class MuseoService implements IService<Museo, Integer> {
     }
 
     /**
+     * Verifica si existe un autor por nombre.
+     */
+    @Override
+    public boolean existsByName(String nombre) {
+        return museoRepository.existsByName(nombre);
+    }
+
+    /**
      * Devuelve todos los museos como lista.
      */
     @Override

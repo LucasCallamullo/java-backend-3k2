@@ -2,6 +2,7 @@ package museo.arte.app;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+
 public class AppContext {
 
     // Mapa para almacenar los objetos.
@@ -58,11 +59,11 @@ public class AppContext {
     }
 
     public <S> void registerService(Class<S> entityClass, S service) {
-        store.put(entityClass.getName(), service);
+        contextMap.put(entityClass.getName(), service);
     }
 
     @SuppressWarnings("unchecked")
     public <S> S getService(Class<S> serviceClass) {
-        return (S) store.get(serviceClass.getName());
+        return (S) contextMap.get(serviceClass.getName());
     }
 }

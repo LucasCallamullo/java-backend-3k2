@@ -51,7 +51,7 @@ mvn archetype:generate `
 # NOTE para hacer push a git
 
 git add .
-git commit -m "Agregado Museo Arte clases"
+git commit -m "Terminado conexion h2 en enunciado museo-arte"
 git push origin main
 
 """ 

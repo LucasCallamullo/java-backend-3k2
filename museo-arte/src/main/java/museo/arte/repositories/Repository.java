@@ -3,6 +3,8 @@ package museo.arte.repositories;
 import java.util.Set;
 import java.util.List;
 import java.util.stream.Stream;
+import jakarta.persistence.TypedQuery; // Consulta tipada en JPA/Hibernate
+import java.util.stream.Collectors;   // Métodos utilitarios para recolectar resultados de streams
 
 import museo.arte.repositories.context.DbContext;
 import jakarta.persistence.EntityManager;

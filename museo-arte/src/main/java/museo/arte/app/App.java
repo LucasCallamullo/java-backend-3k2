@@ -1,6 +1,8 @@
 package museo.arte.app;
 
 import java.util.Scanner;
+import java.net.URL;
+
 // import java.util.ArrayList;
 import museo.arte.menu.Menu;
 import museo.arte.menu.ItemMenu;
@@ -24,18 +26,11 @@ public class App {
         context.registerService(ObraArtisticaService.class, new ObraArtisticaService());
         context.registerService(EstiloArtisticoService.class, new EstiloArtisticoService());
 
-        /* 
-         * Opcion 1: 
-         * Cargar todos los datos de todas las obras en la base de datos, asociando cada obra a los 
-         * objetos necesarios y teniendo en cuenta que cada uno de los objetos asociados debe existir 
-         * una y solo una vez en la memoria.
-         */
-        menu.addOption(1, new ItemMenu<>("Cargar prodductos desde CSV.") {
-            @Override
-            public void ejecutar(AppContext context) {
-                System.out.println("Ya cargaste los datos!");
-            }
-        });
+        Actions actions = new Actions();
+
+        menu.addOption(1, new ItemMenu<>("Cargar obras desde CSV", actions::importarObras));
+        menu.addOption(2, new ItemMenu<>("Listar obras artísticas", actions::listarObras));
+        
 
         /*
         menu.registrarOpcion(1, new MenuOption<>(1, "Cargar productos desde CSV.") {

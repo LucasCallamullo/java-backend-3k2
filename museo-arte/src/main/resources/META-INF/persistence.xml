@@ -1,33 +1,33 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
     version="3.0">
-
-    <!-- DEBE COINCIDIR CON Persistence.createEntityManagerFactory("museo"); -->
+<!-- Definición de una unidad de persistencia llamada "museo". transaction-type="RESOURCE_LOCAL" indica que manejaremos las transacciones manualmente y no mediante un contenedor de aplicaciones (JTA). -->
     <persistence-unit name="museo" transaction-type="RESOURCE_LOCAL">
-        <!-- Your entity classes -->
-        <!-- <class>museo.arte.modelo.Artista</class> -->
+<!-- Clases que serán mapeadas a tablas de la BD -->
         <class>museo.arte.entities.ObraArtistica</class>
         <class>museo.arte.entities.Autor</class>
         <class>museo.arte.entities.EstiloArtistico</class>
         <class>museo.arte.entities.Museo</class>
 
         <properties>
-            <!-- JDBC connection -->
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="jakarta.persistence.jdbc.url"
-                value="jdbc:h2:file:./data/museo.mv.db" />
-            <property name="jakarta.persistence.jdbc.user" value="sa" />
-            <property name="jakarta.persistence.jdbc.password" value="" />
+<!-- Configuración de conexión a la base de datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:file:./data/museo"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
 
-            <!-- Hibernate as JPA provider -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create | create-drop |
-            update | validate -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
+<!-- Dialecto de Hibernate: le indica cómo generar SQL específico para H2 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+<!-- Estrategia para generar/esquema de la base de datos:
+create-drop → crea las tablas al inicio y las borra al terminar
+update → actualiza el esquema sin borrar datos -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+<!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+<!-- Opciones de logging para depuración -->
+            <property name="hibernate.show_sql" value="true"/>      <!-- Muestra las consultas SQL en consola -->
+            <property name="hibernate.format_sql" value="true"/><!-- Da formato legible al SQL -->
         </properties>
     </persistence-unit>
 </persistence>

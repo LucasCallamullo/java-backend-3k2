@@ -1,7 +1,6 @@
 package museo.arte.entities;
 
 import jakarta.persistence.*; // Importamos las anotaciones de JPA
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -67,7 +66,6 @@ public class ObraArtistica {
     @JoinColumn(name = "autor_id", referencedColumnName = "id", nullable = false)
     @ToString.Exclude
     private Autor autor;
-
 }
 
 

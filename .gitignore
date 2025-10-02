@@ -8,6 +8,7 @@ Pruebas/
 proofs/
 sintaxis-basic/
 sintaxis-objetos/
+data/
 
 # mvn stuff
 .mvn/

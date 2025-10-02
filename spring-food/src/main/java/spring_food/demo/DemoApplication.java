@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import spring_food.demo.services.FoodService;
+import spring_food.demo.loader.CsvImporterService;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -21,16 +21,17 @@ public class DemoApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(FoodService foodService) {
+	CommandLineRunner run(CsvImporterService importer) {
 		return args -> {
 			URL folderPath = DemoApplication.class.getResource("/files/foods.csv");
 			if (folderPath != null) {
 				File file = Paths.get(folderPath.toURI()).toFile();
-				foodService.bulkInsert(file);
+				importer.importFromCsv(file);   	// llamás al nuevo servicio
 				System.out.println("✅ Foods loaded from CSV!");
 			} else {
 				throw new IllegalArgumentException("Archivo foods.csv inexistente");
 			}
 		};
 	}
+
 }

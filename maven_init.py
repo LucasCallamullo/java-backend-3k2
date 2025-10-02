@@ -40,8 +40,8 @@ mvn archetype:generate `
 CREAR UN NUEVO PROYECTO
 
 mvn archetype:generate `
-  "-DgroupId=cafeteria" `
-  "-DartifactId=cafeteria-menuMap-csv" `
+  "-DgroupId=parcial-juegos" `
+  "-DartifactId=juegos-uno" `
   "-DarchetypeGroupId=org.apache.maven.archetypes" `
   "-DarchetypeArtifactId=maven-archetype-quickstart" `
   "-DinteractiveMode=false"
@@ -51,7 +51,7 @@ mvn archetype:generate `
 # NOTE para hacer push a git
 
 git add .
-git commit -m "Terminado conexion h2 en enunciado museo-arte"
+git commit -m "Pre enunciado base"
 git push origin main
 
 """ 
@@ -153,3 +153,22 @@ git push origin main
   </build>
 </project>
 """
+
+
+
+appContext = {
+  
+    "path": "resources/files/",
+    "JuegoService": JuegoService(),
+    "GeneroService": GeneroService(),
+    "scanner": Scanner(),
+    
+    
+}
+
+
+
+options = {
+    1: Actions()
+    
+}

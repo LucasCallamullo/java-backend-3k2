@@ -1,0 +1,6 @@
+nombre,edad,fecha_ingreso,salario,empleado_fijo,departamento,puesto
+Ana,30,2020-03-15,45000.00,true,Recursos Humanos,Gerente
+Luis,25,2021-07-01,35000.00,false,Desarrollo,Desarrollador
+Camila,28,2019-11-20,38000.00,true,Desarrollo,Analista
+Juan,40,2015-05-10,60000.00,true,Marketing,Gerente
+María,22,2023-01-05,30000.00,false,Marketing,Desarrollador

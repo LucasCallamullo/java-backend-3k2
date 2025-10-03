@@ -1,28 +1,3 @@
-""" 
-    Este archivo es solo para modificar y crear nuevos proyectos con maven
-
-# NOTE Sirve para iniciar un nuevo proyecto al crear una nueva carpeta y movernos a la misma
-
-mvn archetype:generate `
-  "-DgroupId=museo.arte" `
-  "-DartifactId=museo-arte" `
-  "-DarchetypeGroupId=org.apache.maven.archetypes" `
-  "-DarchetypeArtifactId=maven-archetype-quickstart" `
-  "-DinteractiveMode=false"
-
-
-
-# NOTE para hacer push a git
-
-git add .
-git commit -m "Pre enunciado base"
-git push origin main
-
-""" 
-
-
-# NOTE POM:XML NUEVO MODERNO LINDO BONITO PRECIOSO
-"""
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -30,8 +5,8 @@ git push origin main
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>museo.arte</groupId>
-  <artifactId>museo-arte</artifactId>
+  <groupId>enunciado.parcial</groupId>
+  <artifactId>basic-parcial-3k1</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
@@ -106,7 +81,7 @@ git push origin main
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.5.0</version>
         <configuration>
-          <mainClass>com.ejemplo.hola.App</mainClass>
+          <mainClass>enunciado.parcial.app.App</mainClass>
         </configuration>
       </plugin>
     
@@ -119,21 +94,3 @@ git push origin main
     </plugins>
   </build>
 </project>
-"""
-
-
-context = {
-  "path": URL/archivos,
-  "EmpleadoService": EmpleadoService(),
-  "scanner": Scanner(),
-}
-
-
-options = {
-  1: ItemMenu(),
-  2: ItemMenu(),
-  
-}
-
-
-

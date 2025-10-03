@@ -15,7 +15,7 @@ mvn archetype:generate `
 # NOTE para hacer push a git
 
 git add .
-git commit -m "Pre enunciado base"
+git commit -m "Enunciado base parcial 3k1"
 git push origin main
 
 """ 
@@ -30,6 +30,7 @@ git push origin main
 
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- PONER CORRECTAMENTE LOS groupId y artifactId -->
   <groupId>museo.arte</groupId>
   <artifactId>museo-arte</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -82,14 +83,12 @@ git push origin main
       <scope>runtime</scope>
     </dependency>
 
-
     <!-- JPA (Jakarta Persistence API) -->
     <dependency>
       <groupId>jakarta.persistence</groupId>
       <artifactId>jakarta.persistence-api</artifactId>
       <version>3.1.0</version>
     </dependency>
-
 
     <!-- Hibernate (implementación de JPA) -->
     <dependency>
@@ -101,6 +100,7 @@ git push origin main
 
   <build>
     <plugins>
+      <!-- PRESTAR ATENCION A MAIN CLASS -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -120,20 +120,4 @@ git push origin main
   </build>
 </project>
 """
-
-
-context = {
-  "path": URL/archivos,
-  "EmpleadoService": EmpleadoService(),
-  "scanner": Scanner(),
-}
-
-
-options = {
-  1: ItemMenu(),
-  2: ItemMenu(),
-  
-}
-
-
 

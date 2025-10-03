@@ -1,17 +1,13 @@
+-- Eliminar en orden correcto (primero tablas con FK)
 DROP TABLE IF EXISTS empleado;
 DROP TABLE IF EXISTS departamento;
 DROP TABLE IF EXISTS puesto;
 
-CREATE TABLE departamento (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL
-);
+-- Crear tablas independientes primero
+CREATE TABLE departamento (id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(100) NOT NULL);
+CREATE TABLE puesto (id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(100) NOT NULL);
 
-CREATE TABLE puesto (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL
-);
-
+-- Crear tabla con dependencias al final
 CREATE TABLE empleado (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,

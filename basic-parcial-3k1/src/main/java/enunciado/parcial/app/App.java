@@ -10,7 +10,6 @@ import enunciado.parcial.menu.ItemMenu;
 // import enunciado.parcial.services.PuestoService;
 import enunciado.parcial.services.EmpleadoService;
 
-
 public class App {
     public static void main(String[] args) {
         

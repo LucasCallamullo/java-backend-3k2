@@ -13,13 +13,11 @@ que manejaremos las  transacciones manualmente y no mediante un contenedor de ap
 
 
         <properties>
-        <!--     
+        <!-- Configuración de generación de esquema 
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
             <property name="jakarta.persistence.schema-generation.create-source" value="script"/>
             <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/db-schema.sql"/>
-            <property name="hibernate.globally_quoted_identifiers" value="true"/>
--->
-
+        -->
 <!-- Configuración de conexión a la base de datos -->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
 
@@ -36,8 +34,8 @@ que manejaremos las  transacciones manualmente y no mediante un contenedor de ap
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 <!-- Estrategia para generar/esquema de la base de datos:
 create-drop → crea las tablas al inicio y las borra al terminar
-update → actualiza el esquema sin borrar datos -->
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/> 
+update → actualiza el esquema sin borrar datos  -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>  
 <!-- Opciones de logging para depuración -->
             <property name="hibernate.show_sql" value="true"/>      <!-- Muestra las consultas SQL en consola -->
             <property name="hibernate.format_sql" value="true"/><!-- Da formato legible al SQL -->

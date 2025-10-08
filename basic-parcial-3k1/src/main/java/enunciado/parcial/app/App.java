@@ -26,8 +26,46 @@ public class App {
         // context.registerService(EstiloArtisticoService.class, new EstiloArtisticoService());
 
         Actions actions = new Actions();
-        menu.addOption(1, new ItemMenu<>("Cargar empleados desde CSV", actions::importarEmpleados));
-        menu.addOption(2, new ItemMenu<>("Listar empleados desde DB", actions::listarEmpleados));
+        menu.addOption(1, new ItemMenu<>(
+            "Cargar empleados desde CSV", 
+            actions::importarEmpleados
+        ));
+
+        menu.addOption(2, new ItemMenu<>(
+            "Contar Empleados Fijos y No fijos", 
+            actions::contarEmpleadosFijoYNoFijos
+        ));
+
+        menu.addOption(3, new ItemMenu<>(
+            "Listar Empleados con su Salario Final", 
+            actions::listarEmpleadosSalarioFinal
+        ));
+
+        menu.addOption(4, new ItemMenu<>(
+            "Contar empleados por departamento", 
+            actions::contarEmpleadosPorDepartamento
+        ));
+
+        menu.addOption(5, new ItemMenu<>(
+            "Promedio Salarios por puesto", 
+            actions::promedioSalariosPorPuesto
+        ));
+
+        // AGREGADASS
+        menu.addOption(6, new ItemMenu<>(
+            "Listar empleados desde DB", 
+            actions::listarEmpleados
+        ));
+
+        menu.addOption(7, new ItemMenu<>(
+            "Generar Archivo CSV", 
+            actions::generarArchivoEmpleadosPorDepartamento
+        ));
+
+        menu.addOption(8, new ItemMenu<>(
+            "Buscar un empleado por su edad", 
+            actions::buscarEmpleadoPorEdad
+        ));
         
         // inicializamos un unico scanner en appContext
         Scanner sc = new Scanner(System.in);

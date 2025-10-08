@@ -66,7 +66,7 @@ public class Empleado {
 
     // Método de lógica de negocio
     public double calcularSalarioFinal() {
-        return empleadoFijo ? salario * 1.08 : salario;
+        return this.empleadoFijo ? salario * 1.08 : salario;
     }
 }
 

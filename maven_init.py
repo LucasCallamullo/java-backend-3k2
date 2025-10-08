@@ -15,7 +15,7 @@ mvn archetype:generate `
 # NOTE para hacer push a git
 
 git add .
-git commit -m "Enunciado base parcial 3k1"
+git commit -m "Organizando read me"
 git push origin main
 
 """ 
@@ -121,3 +121,8 @@ git push origin main
 </project>
 """
 
+
+context = {
+  "EmpleadoService": EmpleadoService(),
+  "scanner": Scanner()
+}

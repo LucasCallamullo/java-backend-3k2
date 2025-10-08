@@ -1,0 +1,8 @@
+Departamento,Cantidad de Empleados
+Logística,67
+Recursos Humanos,70
+Finanzas,70
+Ventas,68
+IT,74
+Marketing,73
+Investigación y Desarrollo,78

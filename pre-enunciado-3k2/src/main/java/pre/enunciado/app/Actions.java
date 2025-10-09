@@ -11,11 +11,7 @@ import pre.enunciado.services.JuegoService;
 
 public class Actions {
 
-    public void saludar(AppContext context) {
-        System.out.println("Hola Mundo!!!");
-    }
-
-    public void importarObras(AppContext context) {
+    public void importarJuegos(AppContext context) {
         var pathToImport = (URL) context.get("path");
 
         try (var paths = Files.walk(Paths.get(pathToImport.toURI()))) {
@@ -26,7 +22,7 @@ public class Actions {
                     .toList();
 
             csvFiles.stream()
-                    .filter(f -> f.getName().contains("obras"))
+                    .filter(f -> f.getName().contains("games"))
                     .findFirst()
                     .ifPresentOrElse(f -> {
                         var service = context.getService(JuegoService.class);
@@ -45,31 +41,27 @@ public class Actions {
         }
     }
 
-    /* 
-    public void listarObras(AppContext context) {
+    public void listarJuegos(AppContext context) {
         var service = context.getService(JuegoService.class);
 
         // Recuperar todas las obras desde la BD
-        var obras = service.getAllList();
+        var juegos = service.getAllList();
 
-        if (obras.isEmpty()) {
+        if (juegos.isEmpty()) {
             System.out.println("⚠ No hay obras registradas en la base de datos.");
-        } else {
-            System.out.println("📋 Lista de obras artísticas:");
-            obras.forEach(obra -> {
-                System.out.printf(
-                        "ID: %d | Nombre: %s | Año: %s | Autor: %s | Museo: %s | Estilo: %s | Monto Asegurado: %.2f | Total: %s%n",
-                        obra.getId(),
-                        obra.getNombre(),
-                        obra.getAnio(),
-                        obra.getAutor() != null ? obra.getAutor().getNombre() : "Desconocido",
-                        obra.getMuseo() != null ? obra.getMuseo().getNombre() : "Desconocido",
-                        obra.getEstilo() != null ? obra.getEstilo().getNombre() : "Desconocido",
-                        obra.getMontoAsegurado(),
-                        obra.isSeguroTotal() ? "Sí" : "No"
-                );
-            });
+            return;
         }
+
+        System.out.println("📋 Lista de obras artísticas:");
+        juegos.forEach(j -> {
+            System.out.printf(
+                "ID: %d | Nombre: %s | Año: %d | ESRB: %s | Genero: %s %n",
+                j.getJuegoId(),
+                j.getTitulo(),
+                j.getFechaLanzamiento(),
+                j.getClasificacionEsrb(),
+                j.getGenero() != null ? j.getGenero().getNombre() : "Desconocido"
+            );
+        });
     }
-    */
 }

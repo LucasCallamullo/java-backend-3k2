@@ -52,7 +52,6 @@ public class Juego {
         // también se persistirá automáticamente ese Desarrollador.
         // ⚠️ Solo aplica a persistencia (no a remove, merge, etc.).
         // En muchos casos se usa CascadeType.ALL, pero depende del diseño.
-
         fetch = FetchType.EAGER        // Estrategia de carga: EAGER = siempre trae al Desarrollador junto con el Juego.
         // Alternativa: LAZY (traería al Desarrollador solo cuando se invoque el getter).
     )
@@ -60,7 +59,7 @@ public class Juego {
         name = "DESARROLLADOR_ID",     // Nombre de la columna FK en la tabla JUEGOS.
         // Es la columna que conecta con DESARROLLADORES(DESA_ID).
 
-        nullable = false,              // No se permite NULL en esta columna. 
+        nullable = true,              // No se permite NULL en esta columna. 
         // Cada Juego debe tener obligatoriamente un Desarrollador.
 
         referencedColumnName = "DESA_ID"  // Nombre de la columna PK en la tabla DESARROLLADORES a la que apunta la FK.
@@ -76,7 +75,7 @@ public class Juego {
         cascade = CascadeType.PERSIST,
         fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "GENERO_ID")
+    @JoinColumn(name = "GENERO_ID", nullable = true)
     private Genero genero;
 
 
@@ -84,7 +83,7 @@ public class Juego {
         cascade = CascadeType.PERSIST,
         fetch = FetchType.EAGER
     )
-    @JoinColumn(name = "PLATAFORMA_ID")
+    @JoinColumn(name = "PLATAFORMA_ID", nullable = true)
     private Plataforma plataforma;
 
 }

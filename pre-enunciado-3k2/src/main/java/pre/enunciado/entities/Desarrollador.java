@@ -20,7 +20,7 @@ public class Desarrollador {
     @Column(name = "DESA_ID")
     private Integer desaId;
 
-    @Column(name = "NOMBRE", nullable = false)
+    @Column(name = "NOMBRE", nullable = true)
     private String nombre;
 
     // Getters y Setters

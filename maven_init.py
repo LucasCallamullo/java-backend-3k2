@@ -15,7 +15,7 @@ mvn archetype:generate `
 # NOTE para hacer push a git
 
 git add .
-git commit -m "Organizando read me"
+git commit -m "Completando parcial enunciado-3k2"
 git push origin main
 
 """ 

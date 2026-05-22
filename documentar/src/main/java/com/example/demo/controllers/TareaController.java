@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 // Anotaciones de Spring para controladores REST y mapeo de rutas
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.example.demo.models.Tarea;
@@ -50,7 +51,7 @@ public class TareaController {
     @GetMapping(value = "/{id}", produces = "application/json")
     public Tarea obtener(
             @Parameter(description = "ID de la tarea a buscar", required = true)
-            @PathVariable Long id) {
+            @PathVariable @NonNull Long id) {
         return servicio.obtenerPorId(id);
     }
 
@@ -69,7 +70,7 @@ public class TareaController {
 
     // DELETE /api/tareas/{id} → elimina una tarea por ID
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Long id) {
+    public void eliminar(@PathVariable @NonNull Long id) {
         servicio.eliminar(id);
     }
 

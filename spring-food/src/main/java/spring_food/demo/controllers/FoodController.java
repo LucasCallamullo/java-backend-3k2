@@ -1,5 +1,6 @@
 package spring_food.demo.controllers;
 
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import spring_food.demo.entities.Food;
 import spring_food.demo.services.FoodService;
@@ -39,7 +40,7 @@ public class FoodController {
 
 
     @PostMapping
-    public Food addFood(@RequestBody Food food) {
+    public Food addFood(@RequestBody @NonNull Food food) {
         return service.save(food);
     }
 }

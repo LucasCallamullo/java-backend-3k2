@@ -43,6 +43,7 @@ public class CsvImporterService {
         this.dietService = dietService;
     }
 
+    @SuppressWarnings("null")
     public void importFromCsv(File file) throws IOException {
         Files.lines(Paths.get(file.toURI()))
                 .skip(1) // header

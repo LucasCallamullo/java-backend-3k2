@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 // Anotaciones de Spring
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 // Tipos de colección y fechas
@@ -24,7 +25,7 @@ public class TareaService {
     }
 
     // Busca una tarea por su ID o retorna null si no existe
-    public Tarea obtenerPorId(Long id) {
+    public Tarea obtenerPorId(@NonNull Long id) {
         return repository.findById(id).orElse(null);
     }
 
@@ -46,7 +47,7 @@ public class TareaService {
     }
 
     // Elimina una tarea por ID
-    public void eliminar(Long id) {
+    public void eliminar(@NonNull Long id) {
         repository.deleteById(id);
     }
 

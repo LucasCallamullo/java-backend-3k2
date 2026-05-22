@@ -4,7 +4,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 import utnfc.isi.back.sim.infra.LocalEntityManagerProvider;
-import utnfc.isi.back.sim.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -131,7 +130,6 @@ public abstract class JpaRepositoryBase<T, ID> implements CrudRepository<T, ID> 
         return id == null;
     }
 
-    @SuppressWarnings("unchecked")
     protected Object getId(T entity) {
         try {
             var m = entity.getClass().getMethod("getId");

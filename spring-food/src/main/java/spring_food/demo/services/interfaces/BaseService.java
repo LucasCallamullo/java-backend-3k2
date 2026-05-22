@@ -1,6 +1,7 @@
 package spring_food.demo.services.interfaces;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -16,11 +17,11 @@ public abstract class BaseService<T, ID> {
         return repository.findAll();
     }
 
-    public T save(T entity) {
+    public T save(@NonNull T entity) {
         return repository.save(entity);
     }
 
-    public List<T> saveAll(Iterable<T> entities) {
+    public List<T> saveAll(@NonNull Iterable<T> entities) {
         /*
          * 
          * Django bulk_create: hace un único INSERT masivo en la DB → mucho más eficiente.

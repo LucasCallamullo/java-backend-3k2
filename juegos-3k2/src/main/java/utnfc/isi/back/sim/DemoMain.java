@@ -43,12 +43,13 @@ public class DemoMain {
                 .desarrollador(larian) // compartido
                 .genero(rpg) // compartido
                 .plataforma(pc) // compartida
-                .clasificacionEsrb(ClasificacionEsrb.M)
+                // .clasificacionEsrb(ClasificacionEsrb.M)
                 .rating(9.6)
                 .juegosFinalizados(1000000)
                 .jugando(150000)
                 .resumen("RPG épico basado en D&D.")
                 .build();
+        j1.setClasificacionEsrb(ClasificacionEsrb.M);
         j1 = repoJuego.save(j1);
 
         var j2 = Juego.builder()
@@ -57,12 +58,13 @@ public class DemoMain {
                 .desarrollador(larian) // compartido
                 .genero(rpg) // compartido
                 .plataforma(pc) // compartida
-                .clasificacionEsrb(ClasificacionEsrb.T)
+                // .clasificacionEsrb(ClasificacionEsrb.T)
                 .rating(9.3)
                 .juegosFinalizados(800000)
                 .jugando(50000)
                 .resumen("RPG táctico con party y libertad total.")
                 .build();
+        j2.setClasificacionEsrb(ClasificacionEsrb.T);
         j2 = repoJuego.save(j2);
 
         var j3 = Juego.builder()
@@ -71,25 +73,18 @@ public class DemoMain {
                 .desarrollador(fromSoftware) // distinto
                 .genero(shooter) // distinto
                 .plataforma(switchPlat) // distinta
-                .clasificacionEsrb(ClasificacionEsrb.E10)
+                // .clasificacionEsrb(ClasificacionEsrb.E10)
                 .rating(9.0)
                 .juegosFinalizados(300000)
                 .jugando(20000)
                 .resumen("Aventura shooter en primera persona remasterizada.")
                 .build();
+        j3.setClasificacionEsrb(ClasificacionEsrb.E10);
         j3 = repoJuego.save(j3);
 
         // ----- Listado final -----
         System.out.println("=== Juegos cargados ===");
-        // for (var j : repoJuego.findAll()) {
-        //     String dev   = j.getDesarrollador() != null ? j.getDesarrollador().getNombre() : "(sin desarrollador)";
-        //     String plat  = j.getPlataforma()   != null ? j.getPlataforma().getNombre()     : "(sin plataforma)";
-        //     String gen   = j.getGenero()       != null ? j.getGenero().getNombre()         : "(sin género)";
-        //     String esrb  = j.getClasificacionEsrb() != null ? j.getClasificacionEsrb().getNombre() : "(sin clasificación)";
 
-        //     System.out.printf("• %s | Dev: %s | Plat: %s | Género: %s | ESRB: %s%n",
-        //             j.getTitulo(), dev, plat, gen, esrb);
-        // }
         for (var j : repoJuego.findAllWithRefs()) {
             String dev = j.getDesarrollador() != null ? j.getDesarrollador().getNombre() : "(sin desarrollador)";
             String plat = j.getPlataforma() != null ? j.getPlataforma().getNombre() : "(sin plataforma)";

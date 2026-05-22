@@ -4,8 +4,8 @@
 # NOTE Sirve para iniciar un nuevo proyecto al crear una nueva carpeta y movernos a la misma
 
 mvn archetype:generate `
-  "-DgroupId=museo.arte" `
-  "-DartifactId=museo-arte" `
+  "-DgroupId=clientes" `
+  "-DartifactId=clientes" `
   "-DarchetypeGroupId=org.apache.maven.archetypes" `
   "-DarchetypeArtifactId=maven-archetype-quickstart" `
   "-DinteractiveMode=false"
@@ -122,7 +122,7 @@ git push origin main
 """
 
 
-context = {
-  "EmpleadoService": EmpleadoService(),
-  "scanner": Scanner()
-}
+# context = {
+#  "EmpleadoService": EmpleadoService(),
+#  "scanner": Scanner()
+# }

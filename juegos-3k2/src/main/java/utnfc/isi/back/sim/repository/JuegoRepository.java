@@ -16,5 +16,12 @@ public interface JuegoRepository extends CrudRepository<Juego, Integer> {
 
   public java.util.List<Juego> findAllWithRefs();
 
+  public java.util.List<Object[]> top5GenerosPorJugando();
+
+  public java.util.List<Object[]> desarrolladoresConMasDeN(int n);
+
+  public java.util.List<Object[]> rankingPlataformasPorRatingPromedio(int minJuegos);
+
+
 }
 

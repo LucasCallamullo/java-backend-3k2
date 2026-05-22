@@ -19,6 +19,9 @@
       <!-- Log SQL (opcional) -->
       <property name="hibernate.show_sql" value="false"/>
       <property name="hibernate.format_sql" value="true"/>
+
+      <property name="hibernate.session.events.log" value="false"/>
+      <property name="hibernate.generate_statistics" value="false"/>
     </properties>
   </persistence-unit>
 </persistence>

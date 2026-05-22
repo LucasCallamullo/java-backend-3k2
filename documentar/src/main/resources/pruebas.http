@@ -1,0 +1,65 @@
+### Estado del servidor
+# Verifica que el backend esté activo
+GET http://localhost:8080/api/estado
+
+
+### Saludo personalizado
+# Devuelve un mensaje con el nombre provisto por parámetro
+GET http://localhost:8080/api/saludo?nombre=Felipe
+
+
+### Listar tareas
+# Recupera todas las tareas existentes en la base
+GET http://localhost:8080/api/tareas
+
+
+### Crear tarea
+# Agrega una nueva tarea con todos los campos definidos
+POST http://localhost:8080/api/tareas
+Content-Type: application/json
+
+{
+    "descripcion": "Entregar algo qsy",
+    "completada": false,
+    "fechaLimite": "2025-06-10",
+    "prioridad": "ALTA"
+}
+
+
+### Crear tarea sin fecha ni prioridad (usa lógica de negocio)
+# El servicio completará fecha límite y prioridad por defecto
+POST http://localhost:8080/api/tareas
+Content-Type: application/json
+
+{
+ "descripcion": "Revisar documentación",
+ "completada": false
+}
+
+
+### Obtener una tarea por ID
+# Busca la tarea cuyo ID sea 1
+GET http://localhost:8080/api/tareas/1
+
+
+### Actualizar tarea
+# Reemplaza todos los campos de la tarea con ID 1
+PUT http://localhost:8080/api/tareas/1
+Content-Type: application/json
+
+{
+ "descripcion": "Entregar informe actualizado",
+ "completada": true,
+ "fechaLimite": "2025-06-12",
+ "prioridad": "MEDIA"
+}
+
+
+### Eliminar tarea
+# Borra la tarea con ID 1
+DELETE http://localhost:8080/api/tareas/1
+
+
+### Obtener tareas vencidas
+# Lista tareas que están vencidas y aún no han sido completadas
+GET http://localhost:8080/api/tareas/vencidas

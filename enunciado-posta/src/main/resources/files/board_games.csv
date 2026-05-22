@@ -1,0 +1,108 @@
+NAME;YEAR_PUBLISHED;MIN_AGE;AVERAGE_RATING;USERS_RATING;MIN_PLAYERS;MAX_PLAYERS;DESIGNER;PUBLISHER;CATEGORY
+Ancient Quest;2001;12;8.75;3456;2;4;John Smith;OldWorld Games;Thematic
+City Builders;2015;10;7.90;1204;2;5;Maria Lopez;Sunrise Publishing;Strategy
+Tiny Towns;2017;8;8.10;845;1;4;Akira Tanaka;Blue Harbor;Family
+Mystery Manor;1998;14;7.45;2300;3;6;Élodie Martin;Nordic Games;Party
+Space Traders;2020;13;9.02;7642;2;4;Liam O'Connor;Galactic Press;Euro
+Castle Siege;1985;10;6.50;540;4;8;Hans Meier;OldWorld Games;Abstract
+Wild Frontier;2010;12;7.00;612;2;6;Carlos Rivas;Sunrise Publishing;Thematic
+Ocean Explorers;2019;7;8.55;2200;1;5;Sofia Rossi;Blue Harbor;Family
+The Long Road;2005;16;6.80;315;3;3;Tom Brown;GreyStone;Strategy
+Robot Uprising;2021;10;9.40;9021;2;4;Min-Jae Kim;Galactic Press;Thematic
+Isle of Secrets;2012;12;7.95;1780;2;5;Olivia Clarke;GreenLeaf;Thematic
+Desert Caravan;1995;8;6.40;210;3;4;Pablo Díaz;OldWorld Games;Strategy
+Harvest Festival;2018;6;8.00;480;1;4;Anna Svensson;Nordic Games;Family
+Dungeon Crawl;2009;14;7.20;1320;1;5;Igor Petrov;GreyStone;Thematic
+Star Pilots;2022;10;9.60;10450;1;4;Chen Wei;Galactic Press;Thematic
+Labyrinth Race;1990;10;5.95;98;2;2;Miguel Álvarez;Sunrise Publishing;Abstract
+Merchant Fleet;2003;14;7.30;430;2;6;Sven Larsson;Blue Harbor;Euro
+Train Tycoon;2006;12;8.10;2200;2;6;Kate Johnson;GreyStone;Strategy
+Forbidden Island;2010;8;7.50;5400;2;4;Sean O'Neill;GreenLeaf;Cooperative
+Island Traders;2014;10;7.85;710;3;5;John Smith;Blue Harbor;Euro
+Shadow Market;2008;16;6.75;190;4;8;Maria Lopez;GreyStone;Thematic
+Garden Dice;2016;7;8.20;330;1;4;Akira Tanaka;Nordic Games;Family
+Pirate Cove;1999;10;6.95;420;2;4;Élodie Martin;OldWorld Games;Party
+Skyward Bound;2021;9;9.10;890;2;4;Liam O'Connor;Galactic Press;Thematic
+Neon Nights;2013;16;7.60;615;3;6;Hans Meier;GreyStone;Party
+City Skyscraper;2004;10;7.00;275;2;5;Carlos Rivas;Sunrise Publishing;Strategy
+Undersea Realm;2011;8;8.40;950;2;4;Sofia Rossi;GreenLeaf;Thematic
+Pharaoh's Tomb;1988;12;6.30;155;2;4;Tom Brown;OldWorld Games;Thematic
+Clockwork Guild;2007;12;8.05;780;1;4;Min-Jae Kim;Blue Harbor;Euro
+Wizards' Duel;1993;14;7.10;410;2;2;Olivia Clarke;GreyStone;Party
+Harvest Moon;2019;6;8.50;1290;1;4;Pablo Díaz;Nordic Games;Family
+Sky Market;2015;10;7.95;540;3;5;Anna Svensson;Galactic Press;Strategy
+Cavern Escape;2002;12;6.85;230;2;4;Igor Petrov;OldWorld Games;Adventure
+Polar Expedition;2016;8;8.30;720;2;5;Chen Wei;GreenLeaf;Thematic
+Festival of Colors;2014;5;7.80;410;1;6;Sven Larsson;Sunrise Publishing;Party
+Ironworks;2000;14;7.40;330;2;4;Kate Johnson;GreyStone;Euro
+Secret Gardens;2017;6;8.15;645;1;4;John Smith;Blue Harbor;Family
+Mage Tower;1997;16;6.90;180;3;5;Maria Lopez;OldWorld Games;Thematic
+Railway Empire;2001;12;8.60;4200;2;8;Akira Tanaka;GreyStone;Strategy
+Hidden Lakes;2003;8;7.25;215;2;4;Élodie Martin;GreenLeaf;Family
+Ages of Steel;1980;14;6.00;95;2;8;Liam O'Connor;OldWorld Games;Euro
+Mariner's Route;2010;10;8.05;540;2;5;Hans Meier;Blue Harbor;Thematic
+Cursed Relic;2012;16;7.35;305;3;6;Carlos Rivas;GreyStone;Adventure
+Sunset Valley;2018;6;8.45;880;1;4;Sofia Rossi;Nordic Games;Family
+Temple Run;1996;10;6.70;260;2;4;Tom Brown;Sunrise Publishing;Adventure
+Galactic Mines;2022;14;9.20;11200;2;4;Min-Jae Kim;Galactic Press;Sci-Fi
+Echoes of War;2005;16;7.15;510;4;8;Olivia Clarke;OldWorld Games;Wargame
+Puzzle Island;2011;7;8.00;375;1;1;Pablo Díaz;Blue Harbor;Family
+Chrono Traders;2009;10;7.88;610;2;5;Anna Svensson;GreyStone;Euro
+Dragon's Hoard;1992;12;6.60;145;2;4;Igor Petrov;OldWorld Games;Thematic
+Lumberjack's Luck;2013;8;7.95;270;2;4;Chen Wei;Sunrise Publishing;Family
+Metro Lines;2004;10;8.10;990;2;6;Sven Larsson;GreyStone;Strategy
+Frost Frontier;2017;12;7.70;430;3;6;Kate Johnson;Blue Harbor;Thematic
+Brewmaster;2019;14;7.85;320;2;4;John Smith;Nordic Games;Family
+Shadow Riders;2006;16;6.95;210;3;5;Maria Lopez;GreyStone;Adventure
+Coral Kingdom;2015;8;8.25;510;2;4;Akira Tanaka;GreenLeaf;Thematic
+Market Mayhem;2008;10;7.05;260;2;4;Élodie Martin;Sunrise Publishing;Party
+Starlight Express;2020;9;9.00;780;1;4;Liam O'Connor;Galactic Press;Family
+Forge & Fate;2002;14;7.55;340;2;5;Hans Meier;GreyStone;Euro
+Lost Expedition;1994;10;6.45;120;2;4;Carlos Rivas;OldWorld Games;Adventure
+Tiny Empires;2016;8;7.95;290;1;4;Sofia Rossi;Blue Harbor;Family
+Kingdoms at War;2003;16;6.85;430;3;6;Tom Brown;GreyStone;Wargame
+Aurora Nights;2018;13;8.70;1010;2;5;Min-Jae Kim;GreenLeaf;Thematic
+Riddle Manor;1991;12;6.20;75;2;4;Olivia Clarke;Sunrise Publishing;Party
+Canyon Run;2014;10;7.50;180;2;6;Pablo Díaz;Blue Harbor;Strategy
+Festival Board;2010;6;8.10;640;1;6;Anna Svensson;Nordic Games;Party
+Deep Space Relay;2021;14;9.30;9800;2;4;Chen Wei;Galactic Press;Sci-Fi
+Vineyard Venture;2007;7;7.85;295;1;4;Sven Larsson;GreenLeaf;Family
+Rogue Traders;2000;12;6.95;205;2;5;Kate Johnson;GreyStone;Thematic
+Echo Harbor;2012;9;8.05;355;2;4;John Smith;Blue Harbor;Family
+Temple of Kings;1999;14;7.25;215;3;6;Maria Lopez;OldWorld Games;Adventure
+Sky Merchants;2013;10;7.98;450;2;4;Akira Tanaka;Galactic Press;Euro
+Harbor Masters;2005;8;7.40;190;2;5;Élodie Martin;GreyStone;Strategy
+Solar Colonies;2022;13;9.50;15000;2;6;Liam O'Connor;Galactic Press;Sci-Fi
+Forgotten Realms;1987;16;6.10;60;3;5;Hans Meier;OldWorld Games;Thematic
+Meadow Market;2011;6;8.00;330;1;4;Carlos Rivas;Blue Harbor;Family
+Runic Stones;1998;12;6.75;140;2;4;Sofia Rossi;Sunrise Publishing;Thematic
+Iron Rails;2006;10;7.20;275;2;6;Tom Brown;GreyStone;Strategy
+Stonemason's Guild;2014;14;8.05;500;1;4;Min-Jae Kim;GreenLeaf;Euro
+Whispering Woods;2017;7;8.35;415;1;4;Olivia Clarke;Nordic Games;Family
+Midnight Market;2009;16;6.50;230;3;5;Pablo Díaz;OldWorld Games;Party
+Neptune's Call;2010;8;7.95;370;2;4;Anna Svensson;Blue Harbor;Thematic
+Broken Compass;2015;10;6.90;155;2;3;Chen Wei;GreyStone;Adventure
+Playground Panic;2018;5;7.75;220;1;4;Sven Larsson;Sunrise Publishing;Family
+Raven's Heist;1996;14;6.55;125;2;4;Kate Johnson;OldWorld Games;Thematic
+Edge of Empire;2004;12;8.10;810;2;8;John Smith;GreyStone;Strategy
+Broken Range Game;2010;10;7.00;100;;4;;;Strategy
+MaxLessThanMin;2011;8;6.80;50;5;3;NULL;null;Party
+RatingTooHigh;2005;10;11.0;200;2;4;High Rate;RatePub;Euro
+YearTooFar;2205;12;7.25;120;2;4;Future Dev;TimePub;Sci-Fi
+OnlyMaxPresent;2012;9;7.50;90;;6;Lone Max;SoloPub;Family
+Catan;1995;10;7.20;95000;3;4;Klaus Teuber;Kosmos;Strategy
+Terraforming Mars;2016;12;8.40;85000;1;5;Jacob Fryxelius;FryxGames;Science Fiction
+Uno;1971;6;6.10;320000;2;10;Merle Robbins;Mattel;Family
+The Resistance;2009;13;7.05;25000;5;10;Don Eskridge;Indie Boards & Cards;Bluffing
+Carcassonne;2000;8;7.40;125000;2;5;Klaus-Jürgen Wrede;Hans im Glück;Tile Placement
+---;2001;10;7.50;5000;2;4;Unknown;Fantasy Flight Games;Thematic         
+Ticket to Ride;2004;8;8.00;190000;2;5;Alan R. Moon;;Family                   
+Pandemic;2008;10;8.10;175000;2;4;Matt Leacock;Z-Man Games;Cooperative
+Twilight Imperium;1997;14;9.10;18000;3;6;Christian T. Petersen;Fantasy Flight Games;Strategy
+Risk Legacy;2011;10;7.00;20000;2;6;;Hasbro;War                              
+Small World;2009;8;7.30;55000;2;5;Philippe Keyaerts;Days of Wonder;Fantasy
+Mystery Game;2015;12;11.00;100;2;6;John Doe;Indie House;Strategy     
+Solo Adventure;2019;10;8.20;800;0;1;Jane Roe;Indie House;Solo        
+Ancient World;1700;10;6.50;300;2;4;Old Author;Old Games;History  
+Empty Fields;;;;;;; ; ;                                                      
+Splendor;2014;10;7.50;89000;2;4;Marc André;Space Cowboys;Card Game

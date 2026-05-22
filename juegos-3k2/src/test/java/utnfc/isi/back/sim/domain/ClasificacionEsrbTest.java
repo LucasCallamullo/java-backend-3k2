@@ -41,9 +41,10 @@ class ClasificacionEsrbTest {
 
             Juego j = Juego.builder()
                     .titulo("Juego_" + c.getCodigo())
-                    .clasificacionEsrb(c)
+                    // .clasificacionEsrb(c)
                     .resumen("Demo persistencia " + c.getNombre())
                     .build();
+            j.setClasificacionEsrb(c);
 
             em.persist(j);
             em.getTransaction().commit();

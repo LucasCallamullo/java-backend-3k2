@@ -13,23 +13,25 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.AccessLevel;
 
 @Entity
 @Table(name = "JUEGOS")
-@Getter 
-@Setter 
-@NoArgsConstructor 
-@AllArgsConstructor 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Juego {
+
     @Id
-    @SequenceGenerator(name="seq_juego", sequenceName="SEQ_JUEGOS", allocationSize=1)
+    @SequenceGenerator(name = "seq_juego", sequenceName = "SEQ_JUEGOS", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_juego")
     @Column(name = "JUEGO_ID")
     private Integer id;
@@ -40,21 +42,17 @@ public class Juego {
     @Column(name = "FECHA_LANZAMIENTO")
     private Integer fechaLanzamiento;
 
-    @ManyToOne(nullable = true)    // optional = true, 
+    @ManyToOne(optional = true)
     @JoinColumn(name = "GENERO_ID")
     private Genero genero;
 
-    @ManyToOne(nullable = true)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "DESARROLLADOR_ID")
     private Desarrollador desarrollador;
 
-    @ManyToOne(nullable = true)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "PLATAFORMA_ID")
     private Plataforma plataforma;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "CLASIFICACION_ESRB", length = 4)
-    private ClasificacionEsrb clasificacionEsrb;
 
     @Column(name = "RATING")
     private Double rating;
@@ -65,7 +63,34 @@ public class Juego {
     @Column(name = "JUGANDO")
     private Integer jugando;
 
-    // @Lob
-    @Column(name = "RESUMEN", nullable = true)
+    @Lob
+    @Column(name = "RESUMEN", nullable = false)
     private String resumen;
+
+    // @Enumerated(EnumType.STRING)
+    // @Column(name = "CLASIFICACION_ESRB", length = 4)
+    // private ClasificacionEsrb clasificacionEsrb;
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    @Column(name = "CLASIFICACION_ESRB", length = 4)
+    private String clasificacionEsrbCode;
+
+    /**
+     * API “amigable”: trabajar con Enum
+     */
+    @Transient
+    public ClasificacionEsrb getClasificacionEsrb() {
+        return clasificacionEsrbCode == null ? null : ClasificacionEsrb.fromCodigo(clasificacionEsrbCode);
+    }
+
+    public void setClasificacionEsrb(ClasificacionEsrb esrb) {
+        this.clasificacionEsrbCode = (esrb == null ? null : esrb.getCodigo());
+    }
+
+    /**
+     * Si alguna vez querés setear directo el código (tests/import)
+     */
+    public void setClasificacionEsrbCode(String code) {
+        this.clasificacionEsrbCode = (code == null || code.isBlank()) ? null : code.trim();
+    }
 }

@@ -9,6 +9,8 @@ proofs/
 sintaxis-basic/
 sintaxis-objetos/
 data/
+entrega_inicial/
+entra_tpi/
 
 # mvn stuff
 .mvn/
@@ -86,3 +88,9 @@ nbdist/
 # === OS files ===
 .DS_Store
 Thumbs.db
+
+gitComandos.txt
+mvnw
+mvnw.cmd
+HELP.md
+.gitattributes

@@ -1,0 +1,170 @@
+spring:
+  # profiles:
+  #  active: dev
+
+  cloud:
+    gateway:
+      routes:
+        # Ruta 1: Para /clientes SOLO (sin segmento)
+        - id: clientes-service-root
+          uri: http://clientes-service:8082
+          predicates:
+            - Path=/clientes
+          filters:
+            - RewritePath=/clientes, /api/v1/clientes
+
+        # Ruta 2: Para /clientes/lo-que-sea (con segmento)
+        - id: clientes-service-segment
+          uri: http://clientes-service:8082
+          predicates:
+            - Path=/clientes/**
+          filters:
+            - RewritePath=/clientes/(?<segment>.*), /api/v1/clientes/${segment}
+
+        # =========================================================
+        # SWAGGER CLIENTES
+        # =========================================================
+        - id: clientes-service-swagger-config
+          uri: http://clientes-service:8082
+          predicates:
+            - Path=/clientes-service/v3/api-docs/swagger-config
+          filters:
+            - RewritePath=/clientes-service/v3/api-docs/swagger-config, /v3/api-docs/swagger-config
+
+        - id: clientes-service-swagger-catch-all
+          uri: http://clientes-service:8082
+          predicates:
+            - Path=/clientes-service/**
+          filters:
+            - RewritePath=/clientes-service/(?<segment>.*), /$\{segment}
+
+        # ==============================================
+        #  Solicitudes URL
+        # ==============================================
+        # Para rutas EXACTAS (sin / al final)
+        - id: solicitudes-entities-root
+          uri: http://solicitudes-service:8083
+          predicates:
+            - Path=/solicitudes, /contenedores, /estados-contenedor, estados-solicitud
+          filters:
+            - RewritePath=/(?<entity>solicitudes|contenedores|estados-contenedor|estados-solicitud), /api/v1/${entity}
+
+        # Para todas las SUB-RUTAS
+        - id: solicitudes-entities-all  
+          uri: http://solicitudes-service:8083
+          predicates:
+            - Path=/solicitudes/**, /contenedores/**, /estados-contenedor/**, /estados-solicitud/**
+          filters:
+            - RewritePath=/(?<entity>solicitudes|contenedores|estados-contenedor|estados-solicitud)/(?<segment>.*), /api/v1/${entity}/${segment}
+
+
+        # =========================================================
+        # SWAGGER SOLICITUDES
+        # =========================================================
+        - id: solicitudes-service-swagger-config
+          uri: http://solicitudes-service:8083
+          predicates:
+            - Path=/solicitudes-service/v3/api-docs/swagger-config
+          filters:
+            - RewritePath=/solicitudes-service/v3/api-docs/swagger-config, /v3/api-docs/swagger-config
+
+        - id: solicitudes-service-swagger-catch-all
+          uri: http://solicitudes-service:8083
+          predicates:
+            - Path=/solicitudes-service/**
+          filters:
+            - RewritePath=/solicitudes-service/(?<segment>.*), /$\{segment}
+
+
+        # ==============================================
+        #  LOGISTICA URL
+        # ==============================================
+        # Para rutas EXACTAS (sin / al final)
+        - id: logistica-entities-root
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/camiones, /rutas, /depositos, /tarifas
+          filters:
+            - RewritePath=/(?<entity>camiones|rutas|depositos|tarifas), /api/v1/${entity}
+
+        # Para todas las SUB-RUTAS
+        - id: logistica-entities-all  
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/camiones/**, /rutas/**, /depositos/**, /tarifas/**
+          filters:
+            - RewritePath=/(?<entity>camiones|rutas|depositos|tarifas)/(?<segment>.*), /api/v1/${entity}/${segment}
+
+        
+        # Para rutas EXACTAS (sin / al final)
+        - id: logistica-entities-roott
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/tramos, /ubicaciones, /tipo-tramos, /tipos-ubicacion, /estados-tramo
+          filters:
+            - RewritePath=/(?<entity>tramos|ubicaciones|tipo-tramos|tipos-ubicacion|estados-tramo), /api/v1/${entity}
+
+        # Para todas las SUB-RUTAS
+        - id: logistica-entities-alll 
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/tramos/**, /ubicaciones/**, /tipo-tramos/**, /tipos-ubicacion/**, estados-tramo/**
+          filters:
+            - RewritePath=/(?<entity>tramos|ubicaciones|tipo-tramos|tipos-ubicacion|estados-tramo)/(?<segment>.*), /api/v1/${entity}/${segment}
+
+        # =========================================================
+        # SWAGGER LOGISTICA
+        # =========================================================
+        - id: logistica-service-swagger-config
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/logistica-service/v3/api-docs/swagger-config
+          filters:
+            - RewritePath=/logistica-service/v3/api-docs/swagger-config, /v3/api-docs/swagger-config
+
+        - id: logistica-service-swagger-catch-all
+          uri: http://logistica-service:8084
+          predicates:
+            - Path=/logistica-service/**
+          filters:
+            - RewritePath=/logistica-service/(?<segment>.*), /$\{segment}
+
+
+        # =========================================================
+        # ROUTING SERVICE
+        # =========================================================
+        - id: routing-service
+          uri: http://routing-service:8088
+          predicates:
+            - Path=/routing/**
+          filters:
+            - RewritePath=/routing/(?<segment>.*), /api/v1/routing/${segment}
+
+
+
+        # =========================================================
+        # KEYCLOACK
+        # =========================================================
+        - id: keycloak
+          uri: http://keycloak:8080
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /${segment}
+
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+    urls:
+      - url: /solicitudes-service/v3/api-docs
+        name: Solicitudes Service
+      - url: /clientes-service/v3/api-docs
+        name: Clientes Service
+      - url: /logistica-service/v3/api-docs
+        name: Logistica Service

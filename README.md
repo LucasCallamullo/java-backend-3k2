@@ -30,17 +30,13 @@
 ├── alquiler-csv/                  # Manejo de archivos + objetos
 ├── basic-parcial-3k1/             # Resolución del parcial básico
 ├── cafeteria-menuMap-csv/         # Mapas y carga por CSV
-├── juegos-3k2/                    # Ejercicios lúdicos para practicar POO
-├── museo-arte/                    # Modelado de herencia y colecciones
 ├── parcial-2k25/                  # Ejercicios similares a examen
 ├── pre-enunciado-3k2/             # Base conceptual para trabajos prácticos
+├── PRE_PARCIAL_2025/              # Pre Parcial del 2025
+├── TPI_EJEMPLO_2025/              # TPI ejemplo de MS y DockerCompose 2025
 ├── spring-food/                   # API REST con Spring Boot + JPA
-├── enunciado-posta/               # Consignas completas integradoras
-├── documentar/                    # Código con comentarios pedagógicos
-├── listas-menu/                   # Menú genérico reutilizable
 ├── .gitignore
-├── maven_init.py                  # Script auxiliar para proyectos Maven
-└── README.md                      # Este archivo (próximamente en Markdown)
+└── maven_init.py                  # Script auxiliar para proyectos Maven
 </code></pre>
 
 <hr />
